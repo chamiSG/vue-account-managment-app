@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from '../components/Login'
 import Register from '../components/Register'
 import Dashboard from '../components/Dashboard'
+import AccountRegister from '../components/AccountRegister'
 
 Vue.use(Router)
 
@@ -12,14 +13,15 @@ const router = new Router({
     routes: [
         {
         path: '*',
-        redirect: '/'
+        redirect: '/dashboard'
     },
     {
         path: '/',
         name: 'home',
         meta: {
             requiresAuth: true
-    }
+        },
+        redirect: '/dashboard'
     },
     {
         path: '/login',
@@ -35,6 +37,11 @@ const router = new Router({
         path: '/dashboard',
         name: 'Dashboard',
         component: Dashboard
+    },
+    {
+        path: '/account-register',
+        name: 'AccountRegister',
+        component: AccountRegister
     }
 ]
 });

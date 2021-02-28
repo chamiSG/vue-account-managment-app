@@ -10,21 +10,21 @@
             <div v-if="user" class="alert alert-success" role="alert">You are logged in!</div>
             <div class="row">
               <div class="col-md">
-                <button type="button" class="btn btn-outline-primary btn-lg btn-block">Add New Account</button>
+                <button type="button" class="btn btn-outline-primary btn-lg btn-block" @click.prevent="accountRegister">Add New Account</button>
               </div>
             </div>
             <div class="row justify-content-left">
               <div class="col-md-12">
                 <div class="card mb-3" v-for="record in records" :key="record.id">
-                  <div class="card-header">
-                    <p class="font-weight-semibold font-20">Anatoliy Kondratenko</p>
+                  <div class="card-header alert-success">
+                    <p class="font-weight-semibold font-20">{{record.firstname}} {{record.lastname}}</p>
                   </div>
                   <div class="card-body">
                     <div class="account-info pb-3">
-                      <h5 class="font-weight-semibold text-primary">Account Info</h5>
+                      <p class="font-weight-semibold font-20 text-gray">Account Info</p>
                       <div class="d-flex flex-row p-2 border-bottom">
                         <div class="col-md p-2">
-                          <p class=" text-md-left">TeamView : <span class="mb-n1 font-weight-semibold">{{record.tv_info}}</span></p>
+                          <p class=" text-md-left">TeamView : <span class="mb-n1 font-weight-semibold">{{record.tv_id}}</span></p>
                         </div>
                         <div class="col-md p-2">
                           <p class=" text-md-left">Password : <span class="mb-n1 font-weight-semibold">{{record.tv_pwd}}</span></p>
@@ -32,7 +32,7 @@
                       </div>
                       <div class="d-flex flex-row p-2 border-bottom">
                         <div class="col-md p-2">
-                          <p class=" text-md-left">Anydesk : <span class="mb-n1 font-weight-semibold">{{record.any_info}}</span></p>
+                          <p class=" text-md-left">Anydesk : <span class="mb-n1 font-weight-semibold">{{record.any_id}}</span></p>
                         </div>
                         <div class="col-md p-2">
                           <p class=" text-md-left">Password : <span class="mb-n1 font-weight-semibold">{{record.any_pwd}}</span></p>
@@ -40,7 +40,7 @@
                       </div>
                       <div class="d-flex flex-row p-2 border-bottom">
                         <div class="col-md p-2">
-                          <p class=" text-md-left">VPS/Computer: <span class="mb-n1 font-weight-semibold">{{record.vps_info}}</span></p>
+                          <p class=" text-md-left">VPS/Computer: <span class="mb-n1 font-weight-semibold">{{record.vps_id}}</span></p>
                         </div>
                         <div class="col-md p-2">
                           <p class=" text-md-left">Password : <span class="mb-n1 font-weight-semibold">{{record.vps_pwd}}</span></p>
@@ -48,7 +48,7 @@
                       </div>
                       <div class="d-flex flex-row p-2 border-bottom">
                         <div class="col-md p-2">
-                          <p class=" text-md-left">Upwork : <span class="mb-n1 font-weight-semibold">{{record.upwork_info}}</span></p>
+                          <p class=" text-md-left">Upwork : <span class="mb-n1 font-weight-semibold">{{record.upwork_id}}</span></p>
                         </div>
                         <div class="col-md p-2">
                           <p class=" text-md-left">Password : <span class="mb-n1 font-weight-semibold">{{record.upwork_pwd}}</span></p>
@@ -56,7 +56,7 @@
                       </div>
                       <div class="d-flex flex-row p-2 border-bottom">
                         <div class="col-md p-2">
-                          <p class=" text-md-left">Freelancer : <span class="mb-n1 font-weight-semibold">{{record.freelan_info}}</span></p>
+                          <p class=" text-md-left">Freelancer : <span class="mb-n1 font-weight-semibold">{{record.freelan_id}}</span></p>
                         </div>
                         <div class="col-md p-2">
                           <p class=" text-md-left">Password : <span class="mb-n1 font-weight-semibold">{{record.freelan_pwd}}</span></p>
@@ -64,7 +64,7 @@
                       </div>
                     </div>
                     <div class="profile-info">
-                      <h5 class="font-weight-semibold text-primary">Profile Info</h5>
+                      <p class="font-weight-semibold font-20 text-gray">Profile Info</p>
                       <div class="d-flex flex-row p-2 border-bottom">
                         <div class="col-md p-2">
                           <p class=" text-md-left">First Name : <span class="mb-n1 font-weight-semibold">{{record.firstname}}</span></p>
@@ -130,7 +130,19 @@ export default {
   },
   mounted() {
     var vm = this;
-    vm.records = json;
+    const db = this.$firebase.database();
+    db.ref("account").on('value', (snapshot) => {
+      vm.records = snapshot.val();    
+      console.log(snapshot.val());
+    });
+    
+  },
+  methods: {
+    accountRegister() {
+      this.$router.replace({
+        name: "AccountRegister"
+      });
+    }
   }
 };
 </script>

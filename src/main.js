@@ -23,6 +23,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+Vue.prototype.$firebase = firebase;
+
 firebase.auth().onAuthStateChanged(user => {
   store.dispatch("fetchUser", user);
 });
