@@ -34,24 +34,24 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputCountry">Country/Region</label>
-                    <select id="inputCountry" class="form-control" name="country" value required autofocus v-model="form.country">
+                    <select id="inputCountry" class="form-control" name="country" value autofocus v-model="form.country">
                       <option selected>Choose...</option>
                       <option v-for="country in countries" :key="country.name">{{country.name}}</option>
                     </select>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPhone">Phone Number</label>
-                    <input type="text" class="form-control" id="inputPhone" placeholder="+79594843733" name="phone" value required autofocus v-model="form.phone">
+                    <input type="text" class="form-control" id="inputPhone" placeholder="+79594843733" name="phone" value autofocus v-model="form.phone">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address" value required autofocus v-model="form.address">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address" value autofocus v-model="form.address">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="Moscow" name="city" value required autofocus v-model="form.city">
+                    <input type="text" class="form-control" id="inputCity" placeholder="Moscow" name="city" value autofocus v-model="form.city">
                   </div>
                   
                   <div class="form-group col-md-2">
@@ -67,51 +67,51 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputTV">TeamView ID</label>
-                    <input type="text" class="form-control" id="inputTV" placeholder="TeamView ID" name="tv_id" value required autofocus v-model="form.tv_id">
+                    <input type="text" class="form-control" id="inputTV" placeholder="TeamView ID" name="tv_id" value autofocus v-model="form.tv_id">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputTVPassword">Password</label>
-                    <input type="password" class="form-control" id="inputTVPassword" placeholder="Password" name="tv_pwd" value required autofocus v-model="form.tv_pwd">
+                    <input type="password" class="form-control" id="inputTVPassword" placeholder="Password" name="tv_pwd" value autofocus v-model="form.tv_pwd">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputAnyD">AnyDesk ID</label>
-                    <input type="text" class="form-control" id="inputAnyD" placeholder="AnyDesk ID" name="any_id" value required autofocus v-model="form.any_id">
+                    <input type="text" class="form-control" id="inputAnyD" placeholder="AnyDesk ID" name="any_id" value autofocus v-model="form.any_id">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputADPassword">Password</label>
-                    <input type="password" class="form-control" id="inputADPassword" placeholder="Password" name="any_pwd" value required autofocus v-model="form.any_pwd">
+                    <input type="password" class="form-control" id="inputADPassword" placeholder="Password" name="any_pwd" value autofocus v-model="form.any_pwd">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputVPS">VPS/Computer ID</label>
-                    <input type="text" class="form-control" id="inputVPS" placeholder="VPS/Computer ID" name="vps_id" value required autofocus v-model="form.vps_id">
+                    <input type="text" class="form-control" id="inputVPS" placeholder="VPS/Computer ID" name="vps_id" value autofocus v-model="form.vps_id">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputVPSPassword">Password</label>
-                    <input type="password" class="form-control" id="inputVPSPassword" placeholder="Password" name="vps_pwd" value required autofocus v-model="form.vps_pwd">
+                    <input type="password" class="form-control" id="inputVPSPassword" placeholder="Password" name="vps_pwd" value autofocus v-model="form.vps_pwd">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputUpwork">Upwork ID</label>
-                    <input type="text" class="form-control" id="inputUpwork" placeholder="Upwork ID" name="upwork_id" value required autofocus v-model="form.upwork_id">
+                    <input type="text" class="form-control" id="inputUpwork" placeholder="Upwork ID" name="upwork_id" value autofocus v-model="form.upwork_id">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputUpworkPassword">Password</label>
-                    <input type="password" class="form-control" id="inputUpworkPassword" placeholder="Password" name="upwork_pwd" value required autofocus v-model="form.upwork_pwd">
+                    <input type="password" class="form-control" id="inputUpworkPassword" placeholder="Password" name="upwork_pwd" value autofocus v-model="form.upwork_pwd">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputFreelancer">Freelancer ID</label>
-                    <input type="text" class="form-control" id="inputFreelancer" placeholder="Freelancer ID" name="freelan_id" value required autofocus v-model="form.freelan_id">
+                    <input type="text" class="form-control" id="inputFreelancer" placeholder="Freelancer ID" name="freelan_id" value autofocus v-model="form.freelan_id">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputFreelancerPassword">Password</label>
-                    <input type="password" class="form-control" id="inputFreelancerPassword" placeholder="Password" name="freelan_pwd" value required autofocus v-model="form.freelan_pwd">
+                    <input type="password" class="form-control" id="inputFreelancerPassword" placeholder="Password" name="freelan_pwd" value autofocus v-model="form.freelan_pwd">
                   </div>
                 </div>
               </div>
@@ -135,7 +135,6 @@
 import countryJson from "../data/country.json";
 
 export default {
-
   data() {
     return {
       countries: [],
@@ -166,6 +165,7 @@ export default {
     var vm = this;
     vm.countries = countryJson;
   },
+  
   methods: {
     backBtn() {
       this.$router.replace({
@@ -173,19 +173,35 @@ export default {
       });
     },
     makeToast(variant = null) {
-      this.$bvToast.toast('Toast body content', {
-        title: `Variant ${variant || 'default'}`,
+      this.$bvToast.toast('Your account saved successfully!', {
+        title: `Notification`,
         variant: variant,
         solid: true
       })
     },
+
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    },
+
     accountSubmit() {
       const db = this.$firebase.database();
       var accountRef = db.ref("/account");
+
+      var shortFirstName = this.form.firstname.charAt(0).toUpperCase();
+      var shortLastName = this.form.lastname.charAt(0).toUpperCase();
+      var short_name = shortFirstName + shortLastName;
+
+      var colorPacks = ['secondary', 'primary', 'dark', 'light', 'success', 'warning', 'info', 'danger'];
+      var avatarBg = colorPacks[Math.floor(Math.random() * colorPacks.length)];
+
       var data = {
-        firstname:   this.form.firstname,
-        lastname:    this.form.lastname,
+        firstname:   this.capitalizeFirstLetter(this.form.firstname),
+        lastname:    this.capitalizeFirstLetter(this.form.lastname),
+        short_name:  short_name,
+        avatarBg:    avatarBg,
         email:       this.form.email,
+        email_pwd:   this.form.email_pwd,
         country:     this.form.country,
         phone:       this.form.phone,
         address:     this.form.address,
